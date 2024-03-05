@@ -1,6 +1,8 @@
+package Lab01;
+
 import java.util.Scanner;
 
-public class Zad2 {
+public class Zad02 {
     public static void main(String[] args) {
         System.out.println("Enter value you want to conver to Fahrenheit:");
         Scanner scanner = new Scanner(System.in);

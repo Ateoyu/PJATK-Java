@@ -1,6 +1,8 @@
+package Lab01;
+
 import java.util.Scanner;
 
-public class Zad5 {
+public class Zad05 {
     public static void main(String[] args) {
         System.out.println("Enter array size:");
         Scanner scanner = new Scanner(System.in);

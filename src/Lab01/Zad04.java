@@ -1,6 +1,8 @@
+package Lab01;
+
 import java.util.Scanner;
 
-public class Zad4 {
+public class Zad04 {
     public static void main(String[] args) {
 
         System.out.println("Enter number you want the day for:");

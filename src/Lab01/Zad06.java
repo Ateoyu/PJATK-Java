@@ -1,6 +1,8 @@
+package Lab01;
+
 import java.util.Scanner;
 
-public class Zad6 {
+public class Zad06 {
 
     static int smallestElement(int[] createdArray) {
         int smallest = createdArray[0];
