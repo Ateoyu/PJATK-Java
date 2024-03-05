@@ -34,14 +34,13 @@ public class Zad6 {
         return (double) sum / createdArray.length;
     }
 
-    static double medianOfArrayElements(int[] createdArray) {
+    static void medianOfArrayElements(int[] createdArray) {
         double median = createdArray.length / 2.0;
-        if (median % 1 == 0) {
-            int medianElement = (int) median;
-            return createdArray[medianElement];
+        if (median % 1 != 0) {
+            System.out.print(createdArray[(int) median]);
             }
         else {
-            return median;
+            System.out.print(createdArray[(int) median - 1] + " " + createdArray[(int) median]);
         }
     }
 
@@ -57,30 +56,37 @@ public class Zad6 {
         System.out.println("Filled array:");
         int evenIncrement = createdArray[0];
         for (int i = 1; i < arraySize; i++) {
-            while (evenIncrement % 2 != 0) {
+            if (evenIncrement % 2 != 0) {
                 evenIncrement++;
             }
+            else {
+                if (i == 1) {
+                    evenIncrement += 2;
+                }
+            }
             createdArray[i] = evenIncrement;
-            evenIncrement++;
+            evenIncrement += 2;
         }
 
         for (int i:createdArray) {
             System.out.print("[" + i + "]");
         }
 
-        System.out.print("\nSmallest element: ");
+        System.out.print("\n\n[Array statistics]:");
+
+        System.out.print("\nMin: ");
         System.out.print(smallestElement(createdArray));
 
-        System.out.print("\nLargest element: ");
+        System.out.print("\nMax: ");
         System.out.print(largestElement(createdArray));
 
-        System.out.print("\nSum of elements: ");
+        System.out.print("\nSum: ");
         System.out.print(sumOfArrayElements(createdArray));
 
-        System.out.print("\nAverage of elements: ");
+        System.out.print("\nAverage: ");
         System.out.print(averageOfArrayElements(createdArray, sumOfArrayElements(createdArray)));
 
-        System.out.print("\nMedian of elements: ");
-        System.out.print(medianOfArrayElements(createdArray));
+        System.out.print("\nMedian: ");
+        medianOfArrayElements(createdArray);
     }
 }
