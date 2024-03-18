@@ -1,6 +1,7 @@
 package Lab02;
 
 import java.util.Scanner;
+
 public class Zad01 {
 
     public static double computeAreaOfCircle(int inputRadius) {
@@ -10,6 +11,7 @@ public class Zad01 {
     public static double computeCircumferenceOfCircle(int inputRadius) {
         return 2 * (Math.PI * inputRadius);
     }
+
     public static void main(String[] args) {
         System.out.println("Enter radius of the circle you want to calculate:");
         Scanner scanner = new Scanner(System.in);

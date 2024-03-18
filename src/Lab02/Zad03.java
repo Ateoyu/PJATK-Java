@@ -1,21 +1,27 @@
 package Lab02;
 
 import java.util.Scanner;
+
 public class Zad03 {
     public static void main(String[] args) {
-        System.out.println("Enter time in 24 Hour format [hh:mm]:");
         Scanner scanner = new Scanner(System.in);
-        int hour = scanner.nextInt();
-        int minute = scanner.nextInt();
 
-        int hour12 = 0;
-        if (hour > 12) {
-            hour12 = hour % 12;
-            System.out.println(hour + ":" + minute + " in 12 hour clock is " + hour12 + ":" + minute + "PM");
+        System.out.println("Enter time in 24 hour clock to convert to 12 hours [hh:mm]:");
+        String time24 = scanner.nextLine();
+        String[] time24Split = time24.split(":");
+        int hours = Integer.parseInt(time24Split[0]);
+        int minutes = Integer.parseInt(time24Split[1]);
+
+        String am_pm = "AM";
+        if (hours > 12) {
+            am_pm = "PM";
+            hours %= 12;
+        } else if (hours == 12) {
+            am_pm = "PM";
+        } else if (hours == 0) {
+            hours += 12;
         }
-        else {
-            hour12 = hour;
-            System.out.println(hour + ":" + minute + " in 12 hour clock is " + hour12 + ":" + minute + "AM");
-        }
+
+        System.out.println(time24 + " in 12 hours clock is " + hours + ":" + minutes + am_pm);
     }
 }

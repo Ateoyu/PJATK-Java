@@ -1,6 +1,7 @@
 package Lab02;
 
 import java.util.Scanner;
+
 public class Zad04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,7 +11,7 @@ public class Zad04 {
         char[] phraseToCheckArray = phraseToCheck.toCharArray();
 
         boolean isPalindrome = true;
-        for (int i = 0; i < phraseToCheck.length()/2; i++) {
+        for (int i = 0; i < phraseToCheck.length() / 2; i++) {
             if (phraseToCheckArray[i] != phraseToCheckArray[phraseToCheckArray.length - i - 1]) {
                 isPalindrome = false;
                 break;
@@ -19,8 +20,7 @@ public class Zad04 {
 
         if (isPalindrome) {
             System.out.println("Phrase " + phraseToCheck + " is a palindrome.");
-        }
-        else {
+        } else {
             System.out.println("Phrase " + phraseToCheck + " is not a palindrome. ");
         }
     }
