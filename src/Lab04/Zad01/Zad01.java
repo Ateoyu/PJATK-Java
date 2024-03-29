@@ -1,4 +1,4 @@
-package Lab04;
+package Lab04.Zad01;
 
 import java.util.Arrays;
 import java.util.Scanner;
