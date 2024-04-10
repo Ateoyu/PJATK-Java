@@ -38,10 +38,8 @@ public class Fan {
         this.color = color;
     }
 
-    public void setSpeed() {
+    public void setSpeed(int speedInput) {
         while (true) {
-            Scanner sc = new Scanner(System.in);
-            int speedInput = sc.nextInt();
             if (speedInput > 0 && speedInput < 4) {
                 switch (speedInput) {
                     case 1 -> assignSpeed(FanSpeed.SLOW);
