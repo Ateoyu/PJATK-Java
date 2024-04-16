@@ -2,7 +2,7 @@ package Lab05.Zad05;
 
 import java.util.Scanner;
 
-public class Fraction {
+class Fraction {
     private int numerator;
     private int denominator;
     private final Scanner scanner = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class Fraction {
 
     }
 
-    public Fraction userInputFraction() {
+    Fraction userInputFraction() {
         System.out.print("[Input your fraction]\n" +
                 "Enter numerator: ");
         numerator = scanner.nextInt();
@@ -32,50 +32,57 @@ public class Fraction {
         return new Fraction(numerator, denominator);
     }
 
-    public Fraction addition(Fraction summand1, Fraction summand2) {
-        do {
+    Fraction addition(Fraction summand1, Fraction summand2) {
+        if (summand1.denominator != summand2.denominator) {
             Fraction temp = new Fraction();
+            Fraction temp2 = new Fraction();
             temp.numerator = summand1.numerator * summand2.denominator;
             temp.denominator = summand1.denominator * summand2.denominator;
 
-            summand2.numerator *= summand1.denominator;
-            summand2.denominator *= summand1.denominator;
+            temp2.numerator = summand2.numerator * summand1.denominator;
+            temp2.denominator = summand2.denominator * summand1.denominator;
 
             summand1 = temp;
-        } while (summand1.denominator != summand2.denominator);
+            summand2 = temp2;
+        }
 
         return new Fraction(summand1.numerator + summand2.numerator, summand1.denominator);
     }
 
-    public Fraction subtraction(Fraction minuend, Fraction subtrahend) {
-        do {
+    Fraction subtraction(Fraction minuend, Fraction subtrahend) {
+        if (minuend.denominator != subtrahend.denominator) {
             Fraction temp = new Fraction();
+            Fraction temp2 = new Fraction();
             temp.numerator = minuend.numerator * subtrahend.denominator;
             temp.denominator = minuend.denominator * subtrahend.denominator;
 
-            subtrahend.numerator *= minuend.denominator;
-            subtrahend.denominator *= minuend.denominator;
+            temp2.numerator = subtrahend.numerator * minuend.denominator;
+            temp2.denominator = subtrahend.denominator * minuend.denominator;
 
             minuend = temp;
-        } while (minuend.denominator != subtrahend.denominator);
+            subtrahend = temp2;
+        }
 
         return new Fraction(minuend.numerator - subtrahend.numerator, minuend.denominator);
     }
 
-    public Fraction multiplication(Fraction multiplier, Fraction multiplicand) {
-        multiplier.numerator *= multiplicand.numerator;
-        multiplier.denominator *= multiplicand.denominator;
+    Fraction multiplication(Fraction multiplier, Fraction multiplicand) {
+        Fraction temp = new Fraction();
+        temp.numerator = multiplier.numerator * multiplicand.numerator;
+        temp.denominator = multiplier.denominator * multiplicand.denominator;
 
-        return new Fraction(multiplier.numerator, multiplier.denominator);
+        return temp;
     }
 
-    public Fraction division(Fraction dividend, Fraction divisor) {
+    Fraction division(Fraction dividend, Fraction divisor) {
+        Fraction temp = new Fraction();
+        temp.numerator = dividend.numerator * divisor.denominator;
+        temp.denominator = dividend.denominator * divisor.numerator;
 
-
-        return new Fraction();
+        return temp;
     }
 
-    public String outputFraction() {
+    String outputFraction() {
         return numerator + "/" + denominator;
     }
 
