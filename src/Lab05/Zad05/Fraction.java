@@ -12,8 +12,11 @@ class Fraction {
         this.denominator = denominator;
     }
 
-    Fraction() {
+    Fraction(Fraction fraction1, Fraction fraction2) {
+        //todo one day
+    }
 
+    Fraction() {
     }
 
     Fraction userInputFraction() {
@@ -30,6 +33,22 @@ class Fraction {
         while (denominator == 0);
 
         return new Fraction(numerator, denominator);
+    }
+
+    Fraction bringToCommonDenominator(Fraction fraction1, Fraction fraction2) {
+        if (fraction1.denominator != fraction2.denominator) {
+            Fraction temp = new Fraction();
+            Fraction temp2 = new Fraction();
+            temp.numerator = fraction1.numerator * fraction2.denominator;
+            temp.denominator = fraction1.denominator * fraction2.denominator;
+
+            temp2.numerator = fraction2.numerator * fraction1.denominator;
+            temp2.denominator = fraction2.denominator * fraction1.denominator;
+
+            fraction1 = temp;
+            fraction2 = temp2;
+        }
+        return new Fraction(fraction1, fraction2);
     }
 
     Fraction addition(Fraction summand1, Fraction summand2) {
