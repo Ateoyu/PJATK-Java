@@ -1,7 +1,5 @@
 package Lab04.Zad05;
 
-import java.util.Scanner;
-
 public class Fan {
 
     public enum FanSpeed {
